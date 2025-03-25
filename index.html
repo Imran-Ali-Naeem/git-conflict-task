@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .todo-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            background: #e3e3e3;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+        li:hover {
+            background: #d1d1d1;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>📌 To-Do List</h2>
+        <ul>
+            <li><input type="checkbox" onclick="toggleTask(this)"> Finish homework</li>
+            <li><input type="checkbox" onclick="toggleTask(this)"> Go for a walk</li>
+            <li><input type="checkbox" onclick="toggleTask(this)"> Read a book</li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleTask(checkbox) {
+            if (checkbox.checked) {
+                checkbox.parentElement.classList.add("completed");
+            } else {
+                checkbox.parentElement.classList.remove("completed");
+            }
+        }
+    </script>
+</body>
+</html>
